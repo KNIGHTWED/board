@@ -1,3 +1,31 @@
 .ListItem {
   align-items: center;
+  display: flex;
+  padding: 3px;
+}
+
+.Numbers {
+  align-items: center;
+  width: 50px;
+}
+
+.text {
+  flex: 1;
+}
+
+.date {
+
+}
+
+.link:link {
+  text-decoration: none;
+  color: black;
+}
+.link:visited {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  text-decoration: none;
+  color: black;
 }

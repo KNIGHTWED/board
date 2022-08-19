@@ -1,17 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './ListItem.css';
+import cn from 'classnames';
 
-import './ListItem.css'
-
-
-const ListItem = () => {
+const ListItem = ({ post }) => {
+const { id, text, date } = post;
 
   return (
     <div className='ListItem'>
-      <div className='Numbers'>
-        1
-        <div className='text'>게시글</div>
-      </div>
-      <div className='date'>00.00.00</div>
+      <div className='Numbers'>{id}</div>
+      <div className='text'><Link className='link' to={'/post/'+id}>{text}</Link></div>
+      <div className='date'>{date}</div>
     </div>
   );
 };

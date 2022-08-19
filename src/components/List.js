@@ -1,9 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import ListItem from './ListItem';
 import './List.css'
 
-const List = () => {
+const List = ({ posts }) => {
+
+
   return (
     <div className='list'>
       <div className='button'>
@@ -11,9 +13,9 @@ const List = () => {
           <button>글쓰기</button>
         </Link>
       </div>
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      {posts.map(post => (
+        <ListItem post={post} key={post.id} />
+      ))}
     </div>
   );
 };
