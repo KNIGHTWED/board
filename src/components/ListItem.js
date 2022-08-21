@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './ListItem.css';
+import '../styles/ListItem.css';
 import cn from 'classnames';
 
 const ListItem = ({ post }) => {
-const { id, text, date } = post;
+const { id, title, date } = post;
 
   return (
     <div className='ListItem'>
       <div className='Numbers'>{id}</div>
-      <div className='text'><Link className='link' to={'/post/'+id}>{text}</Link></div>
+      <div className='text'><Link className='link' to={'/post/'+id}>{title}</Link></div>
       <div className='date'>{date}</div>
     </div>
   );
