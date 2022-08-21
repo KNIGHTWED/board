@@ -1,5 +1,5 @@
 .form{
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
   margin-top: 10px;
   text-align: center;
@@ -13,7 +13,10 @@
 
 .text-area {
   width: 100%;
-  min-height: 500px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 15rem;
+  max-height: 15rem;
   margin-top: 5px;
 }
 
@@ -22,6 +25,6 @@
 }
 
 .button-submit {
-  width: 20%;
-  height: 40px;
+  width: 5rem;
+  height: 2rem;
 }
