@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import ListItem from './ListItem';
-import './List.css'
+import '../styles/List.css'
 
 const List = ({ posts }) => {
 
