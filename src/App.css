@@ -6,3 +6,16 @@
 .header {
   text-align: center;
 }
+
+.home:link {
+  text-decoration: none;
+  color: black;
+}
+.home:visited {
+  text-decoration: none;
+  color: black;
+}
+.home:hover {
+  text-decoration: none;
+  color: black;
+}

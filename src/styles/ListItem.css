@@ -10,6 +10,7 @@
 }
 
 .text {
+  align-items: center;
   flex: 1;
 }
 

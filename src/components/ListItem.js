@@ -9,7 +9,7 @@ const { id, title, date } = post;
   return (
     <div className='ListItem'>
       <div className='Numbers'>{id}</div>
-      <div className='text'><Link className='link' to={'/post/'+id}>{title}</Link></div>
+      <div className='text'><Link className='link' to={`/post/${id}`}>{title}</Link></div>
       <div className='date'>{date}</div>
     </div>
   );

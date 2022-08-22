@@ -1,45 +1,23 @@
 import React, { useState, useReducer, useCallback} from 'react';
-import '../styles/Writer.css';
+import '../styles/Posting.css';
 import { Link } from 'react-router-dom';
 
-const Writer = ({ onInsert }) => {
+const Posting = ({ onInsert }) => {
   const[text, setText] = useState({
     title: "",
     contents: "",
-    date: "",
   });
 
   const onChangeText = useCallback(e => {
     setText({
       ...text,
       [e.target.name]: e.target.value,
-    })
+    });
     console.log(text);
   },);
 
-  // 날짜 구하는 함수
-  const getPostTime = () => {
-    let now = new Date();
-    let year = now.getFullYear();
-    let month = now.getMonth();
-    let date = now.getDay();
-
-    // let posttime = (year%2000)+"/"+month+"/"+date;
-    let posttime = `${year%2000}/${month}/${date}`;
-
-    return posttime;
-  }
-
   const onClick = useCallback(e => {
-    console.log(typeof(getPostTime())+`: ${getPostTime()}`);
-    const posttime = getPostTime();
-    setText({
-      ...text,
-      date: `${getPostTime()}`,
-    })
-    onInsert(text)
-
-    console.log(text);
+    onInsert(text);
 
   }, [onInsert, text]);
 
@@ -58,4 +36,4 @@ const Writer = ({ onInsert }) => {
   );
 };
 
-export default Writer;
+export default Posting;
