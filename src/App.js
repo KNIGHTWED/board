@@ -109,13 +109,13 @@ const App = () => {
       
       <footer>
         <div className='footer1'>
-          이메일 주소
+          jminkim@tecace.com
         </div>
         <div className='footer2'>
           작성자: 김정민
         </div>
         <div className='footer3'>
-          깃주소
+          <a className='link_git' href="https://github.com/KNIGHTWED/board.git">https://github.com/KNIGHTWED/board.git</a>
         </div>
       </footer>
     </div>
