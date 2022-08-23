@@ -2,8 +2,9 @@ import React, { useState, useReducer, useCallback} from 'react';
 import '../styles/Posting.css';
 import { Link } from 'react-router-dom';
 
-const Posting = ({ onInsert }) => {
+const Posting = ({ onInsert, posts }) => {
   const[text, setText] = useState({
+    id: "",
     title: "",
     contents: "",
   });
