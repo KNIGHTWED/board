@@ -3,22 +3,21 @@
 }
 
 .title_class {
-  align-items: center;
   display: flex;
   padding: 3px;
 }
 
-.title_class .Numbers {
+.title_class_Numbers {
   text-align: center;
-  width: 50px;
+  flex: 1.5;
 }
 
-.title_class .text {
+.title_class_text {
   text-align: center;
-  flex: 1;
+  flex: 6.5;
 }
 
-.title_class .date {
+.title_class_date {
   text-align: center;
-  width: 65px;
+  flex: 2;
 }
