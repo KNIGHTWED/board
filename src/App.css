@@ -51,3 +51,29 @@ footer {
 .footer3 {
   flex:2;
 }
+
+.sendmail:link {
+  text-decoration: none;
+  color: black;
+}
+.sendmail:visited {
+  text-decoration: none;
+  color: black;
+}
+.sendmail:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.link_git:link {
+  text-decoration: none;
+  color: black;
+}
+.link_git:visited {
+  text-decoration: none;
+  color: black;
+}
+.link_git:hover {
+  text-decoration: none;
+  color: black;
+}
