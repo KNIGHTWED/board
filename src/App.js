@@ -41,21 +41,13 @@ const App = () => {
     return posttime;
   };
 
-  // const onEdit = (targetId, newContent) => {
-  //   setPosts(
-  //     posts.map((data) => 
-  //       data.id === targetId ? { ...data, title: newContent.title, contents: newContent.contents, date: newContent.date } : data
-  //     )
-  //   );
-  // };
-
   const onEdit = useCallback( (targetId, newContent) => {
     setPosts(
       posts.map((data) => 
         data.id === targetId ? { ...data, title: newContent.title, contents: newContent.contents, date: newContent.date } : data
       )
     );
-  })
+  },[posts])
 
   const onRemove = useCallback( id => {
     setPosts(posts.filter(post => post.id !==id));
@@ -73,7 +65,6 @@ const App = () => {
       setPosts(posts.concat(post));
         
       nextId.current += 1;
-      console.log(post);
     } else{
       const post = {
         id: text.id,
@@ -83,12 +74,11 @@ const App = () => {
       };
       // 기존 배열에서 id가 같은 인덱스를 찾아서 수정
       onEdit(text.id, post);
-      
-      console.log(post);
     }
     
   }, [onEdit, posts]);
 
+  console.log(posts);
 
   return (
     <div className='main'>
@@ -109,7 +99,7 @@ const App = () => {
       
       <footer>
         <div className='footer1'>
-          jminkim@tecace.com
+          <a className='sendmail' href="mailto:jminkim@tecace.com">jminkim@tecace.com</a>
         </div>
         <div className='footer2'>
           작성자: 김정민

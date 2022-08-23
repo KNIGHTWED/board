@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useCallback, useEffect} from 'react';
+import React, { useState, useCallback, useEffect} from 'react';
 import '../styles/Posting.css';
 import { Link, useParams } from 'react-router-dom';
 
@@ -12,7 +12,6 @@ const Posting = ({ onInsert, posts }) => {
 
   const params = useParams();
   const postId = params.postId*1;
-  console.log(!isNaN(postId));
   
   useEffect(() => {
     if(!isNaN(postId)){
@@ -26,14 +25,12 @@ const Posting = ({ onInsert, posts }) => {
     }
   },[posts, postId]);
   
-
   const onChangeText = useCallback(e => {
     setText({
       ...text,
       [e.target.name]: e.target.value,
     });
-    console.log(text);
-  },);
+  },[text]);
 
   const onClick = useCallback(e => {
     onInsert(text);

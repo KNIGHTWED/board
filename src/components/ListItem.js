@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/ListItem.css';
-import cn from 'classnames';
 
 const ListItem = ({ post }) => {
 const { id, title, date } = post;

@@ -5,9 +5,8 @@ import '../styles/PostedView.css'
 const PostedView = ({posts, onRemove}) => {
   
   const params = useParams();
-  // console.log("params.postId의 타입은 "+typeof params.postId);
   const postId = params.postId*1;
-  // console.log("postId의 타입은 "+typeof postId);
+
   const[posted, setPosted] = useState({
     id: "",
     title: "",
@@ -23,7 +22,6 @@ const PostedView = ({posts, onRemove}) => {
       }
     });
   },[posts, postId]);
-  console.log(posted);
 
   return (
     <div className='form'>
