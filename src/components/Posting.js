@@ -1,13 +1,31 @@
-import React, { useState, useReducer, useCallback} from 'react';
+import React, { useState, useReducer, useCallback, useEffect} from 'react';
 import '../styles/Posting.css';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Posting = ({ onInsert, posts }) => {
+  
   const[text, setText] = useState({
     id: "",
     title: "",
     contents: "",
   });
+
+  const params = useParams();
+  const postId = params.postId*1;
+  console.log(!isNaN(postId));
+  
+  useEffect(() => {
+    if(!isNaN(postId)){
+      posts.forEach(data => {
+        if(data.id === postId){
+          setText({
+            ...data
+          });
+        }
+      });
+    }
+  },[posts, postId]);
+  
 
   const onChangeText = useCallback(e => {
     setText({

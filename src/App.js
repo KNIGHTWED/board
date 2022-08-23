@@ -87,7 +87,6 @@ const App = () => {
       console.log(post);
     }
     
-    
   }, [onEdit, posts]);
 
 
@@ -103,7 +102,8 @@ const App = () => {
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route exact path="/home" element={<List posts={posts} />} />
           <Route path="/posting" element={<Posting posts={posts} onInsert={onInsert} />} />
-          <Route path="/post/:postId" element={<PostedView posts={posts} onRemove={onRemove}/>} />
+          <Route path="/posting/:postId" element={<Posting posts={posts} onInsert={onInsert} />} />
+          <Route path="/post/:postId" element={<PostedView posts={posts} onRemove={onRemove} />} />
         </Routes>  
       </div>  
       

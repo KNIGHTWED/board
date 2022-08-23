@@ -17,7 +17,6 @@ const PostedView = ({posts, onRemove}) => {
   useEffect(() => {
     posts.forEach(data => {
       if(data.id === postId){
-        console.log("true");
         setPosted({
           ...data
         });
@@ -33,7 +32,7 @@ const PostedView = ({posts, onRemove}) => {
         <div name='contents' className='contents' >{posted.contents}</div>
       </div>
       <div className='form-button'>
-        <Link to="/posting/">
+        <Link to={`/posting/${postId}`}>
           <button className='button-modify' >수정</button>
         </Link>
         <Link to="/">
