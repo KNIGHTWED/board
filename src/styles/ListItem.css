@@ -1,21 +1,19 @@
 .ListItem {
-  align-items: center;
   display: flex;
   padding: 3px;
 }
 
 .Numbers {
-  align-items: center;
-  width: 50px;
+  flex: 1.5;
 }
 
 .text {
-  align-items: center;
-  flex: 1;
+  flex: 6.5;
 }
 
 .date {
-
+  text-align: center;
+  flex: 2;
 }
 
 .link:link {
