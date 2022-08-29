@@ -1,35 +1,44 @@
 import React,{ useState, useRef, useCallback } from 'react';
 import Posting from './components/Posting';
 import List from './components/List';
-import PostedView from './components/PostedView'
+import PostedView from './components/PostedView';
 import './App.css'
+import items from './items/post.json';
+
 
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
 
 const App = () => {
 
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      title: '1번 게시글',
-      contents: '1번 내용',
-      date: '22/03/22'
-    },
-    {
-      id: 2,
-      title: '2번 게시글',
-      contents: '2번 내용',
-      date: '22/03/22'
-    },
-    {
-      id: 3,
-      title: '3번 게시글',
-      contents: '3번 내용',
-      date: '22/03/22'
-    }
-  ]);
+  // const [posts, setPosts] = useState([
+  //   {
+  //     id: 1,
+  //     title: '1번 게시글',
+  //     contents: '1번 내용',
+  //     date: '22/03/22'
+  //   },
+  //   {
+  //     id: 2,
+  //     title: '2번 게시글',
+  //     contents: '2번 내용',
+  //     date: '22/03/22'
+  //   },
+  //   {
+  //     id: 3,
+  //     title: '3번 게시글',
+  //     contents: '3번 내용',
+  //     date: '22/03/22'
+  //   }
+  // ]);
 
-  const nextId = useRef(4);
+  const [posts, setPosts] = useState(items.post);
+
+  // useEffect(() => {
+  //   console.log('JSON Object length: ',items.post.length);
+  //   setPosts(items.post);
+  // })
+
+  const nextId = useRef(items.post.length+1);
 
   const getPostTime = () => {
     const now = new Date();
@@ -78,7 +87,9 @@ const App = () => {
     
   }, [onEdit, posts]);
 
-  console.log(posts);
+  console.log("State: ",posts);
+
+  console.log("JSON: ",JSON.stringify(posts));
 
   return (
     <div className='main'>

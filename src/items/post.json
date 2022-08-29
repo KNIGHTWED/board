@@ -1,0 +1,22 @@
+{
+  "post":[
+    {
+      "id": 1,
+      "title": "1번 게시글 with Json",
+      "contents": "1번 내용",
+      "date": "22/03/22"
+    },
+    {
+      "id": 2,
+      "title": "2번 게시글 with Json",
+      "contents": "2번 내용",
+      "date": "22/03/22"
+    },
+    {
+      "id": 3,
+      "title": "3번 게시글 with Json",
+      "contents": "3번 내용",
+      "date": "22/03/22"
+    }
+  ]
+}
