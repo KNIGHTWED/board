@@ -1,0 +1,31 @@
+.Header {
+    display: flex;
+    padding: 3px;
+}
+
+/* 중앙 타이틀 */
+.Center {
+    flex: 5;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* 왼쪽 여백 */
+.Left {
+    flex: 2.5;
+    text-align: center;
+}
+
+/* 오른쪽 메뉴 */
+.Right {
+    flex: 2.5;
+    text-align: center-bottom;
+    display: flex;
+    font-size: 1rem;
+    padding-top: 1rem;
+    float: right;
+}
+
+.menuItem {
+    flex: 1;
+}

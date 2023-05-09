@@ -1,0 +1,14 @@
+{
+    "menu": [
+        {
+            "id": 1,
+            "name": "board",
+            "link": "/home"
+        },
+        {
+            "id": 2,
+            "name": "wines",
+            "link": "/wines"
+        }
+    ]
+}
