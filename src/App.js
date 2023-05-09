@@ -1,12 +1,20 @@
+// module
 import React,{ useState, useRef, useCallback } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+// components
 import Posting from './components/Posting';
 import List from './components/List';
 import PostedView from './components/PostedView';
-import './App.css'
+import Header from './components/Header'
+import Wines from './components/Wines'
+
+// json
 import items from './items/post.json';
+import menuItems from './items/menu.json';
 
-
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
+// style
+import './App.css'
 
 const App = () => {
 
@@ -32,6 +40,7 @@ const App = () => {
   // ]);
 
   const [posts, setPosts] = useState(items.post);
+  const [menus, setMenus] = useState(menuItems.menu);
 
   // useEffect(() => {
   //   console.log('JSON Object length: ',items.post.length);
@@ -87,16 +96,17 @@ const App = () => {
     
   }, [onEdit, posts]);
 
-  console.log("State: ",posts);
+  // console.log("State: ",posts);
 
-  console.log("JSON: ",JSON.stringify(posts));
+  // console.log("JSON: ",JSON.stringify(posts));
 
   return (
     <div className='main'>
-      <header className='header'>
-        <Link className='home' to="/home">게시판</Link>
-        <hr />
-      </header>
+      <div className="header">
+        <Header menus={menus}/>
+        <hr/>
+      </div>
+      
       
       <div className='container-wrap'>
         <Routes>
@@ -105,6 +115,7 @@ const App = () => {
           <Route path="/posting" element={<Posting posts={posts} onInsert={onInsert} />} />
           <Route path="/posting/:postId" element={<Posting posts={posts} onInsert={onInsert} />} />
           <Route path="/post/:postId" element={<PostedView posts={posts} onRemove={onRemove} />} />
+          <Route path="/wines" element={<Wines/>} />
         </Routes>  
       </div>  
       

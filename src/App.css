@@ -14,8 +14,8 @@ header {
 }
 
 .container-wrap {
-  width: 60%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 2% auto;
   padding-bottom: 100px;
 }
 
@@ -76,4 +76,8 @@ footer {
 .link_git:hover {
   text-decoration: none;
   color: black;
+}
+
+.header {
+  margin-bottom: 5px;
 }
