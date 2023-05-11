@@ -10,7 +10,7 @@ const Header = ({menus}) => {
         <div className='Center'>게시판</div>
         <div className='Right'>
             {menus.map(menu => (
-            <Link className='menuItem' to={menu.link}>{menu.name}</Link>
+            <Link className='menuItem' key={menu.name} to={menu.link}>{menu.name}</Link>
             ))}
         </div>
     </div>

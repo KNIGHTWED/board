@@ -2,21 +2,69 @@ img {
     width:1.5rem
 }
 
-table, th, td, tbody {
-    width: 100%
+table, th, td{
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
 }
-/* 
-#winery {
+
+th {
+    padding: 1%
 }
-#wine {
-    
+
+th#winery {
+    width: 30%;
 }
-#rating {
-    
+th#wine {
+    width: 30%
 }
-#location {
-    
+th#rating {
+    width: 10%
 }
-#image {
-    
-} */
+th#location {
+    width: 20%
+}
+th#image {
+    width: 10%
+}
+
+td {
+    padding-inline: 1%;
+    height: 4rem;
+}
+
+td#winery {
+    width: 30%;
+}
+td#wine {
+    width: 30%
+}
+td#rating {
+    width: 10%;
+}
+td#location {
+    width: 20%
+}
+td#image {
+    width: 10%;
+    text-align: center;
+}
+img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#page {
+    width: 1rem;
+    text-align: center;
+}
+
+#before {
+    width: 10%;
+    text-align: center;
+}
+#after {
+    width: 10%;
+    text-align: center;
+}
