@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../../node_modules/axios/index';
 import '../styles/Wines.css'
+import { useLocation, useNavigate, useParams } from '../../node_modules/react-router-dom/index';
+import wineService from '../services/wineService';
 
 const Wines = () => {
     const [wines, setWines] = useState([]);
     const [error, setError] = useState(null);
-    const [kind, setKind] = useState(["reds", "whites", "sparkling", "rose", "desert", "port"]);
     const [page, setPage] = useState();
     const [count, setCount] = useState();
     const [total, setTotal] = useState();
 
-    // ?key1=value1&key2=value2
-    // ? 삭제하고 시작.
-    // &구분자로 나누기. key1=value2, key2=value2
-    // 나눈거로 map 돌려서 =구분자로 나누고 data[0]:data[1] 형태로 만들기.
-    // data = {key1:value1, key2:value2}
-
+    const location = useLocation();
+    const params = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        wineService.clickPrevious({pathname:location.pathname, search:location.search});
+        wineService.wineSelect();
+        console.log("location\n", location);
         async function fetchData() {
-            // setWines([]);
+            setWines([]);
             try {
-                const response = await axios.get("http://192.168.148.38:8000/wines/" + kind[0]);
+                const response = await axios.get("http://192.168.148.38:8000" + location.pathname + location.search);
                 let page = response.data.result.page;
                 let count = response.data.result.count;
                 let total = response.data.result.total;
@@ -38,7 +39,8 @@ const Wines = () => {
             }
         }
         fetchData();
-    }, []);
+    }, [location]);
+
 
 
     let wineTable;
@@ -51,10 +53,9 @@ const Wines = () => {
                 <td id="wine" key={wine.wine}>{wine.wine}</td>
                 <td id="rating" key={wine.rating.average}>{wine.rating.average}</td>
                 <td id="location" key={wine.location}>{wine.location}</td>
-                <td id="image" key={wine.image}><img src={wine.image} alt={wine.image} /></td>
+                <td id="image" key={wine.image}><img src={wine.image} alt={wine.wine} /></td>
             </tr>
         });
-
     }
 
     let maxPage = (Math.ceil(page / count) * count);
@@ -64,11 +65,11 @@ const Wines = () => {
         pages.push(i);
     }
 
-    let pageBar = pages.map((page) => {
-        return <td id="page"><a href>{page}</a></td>
-    })
+    // let pageBar = pages.map((page) => {
+    //     return <td id="page" key={page} onClick={() => {}}><a >{page}</a></td>
+    // })
 
-    console.log(pageBar);
+    // console.log(pageBar);
 
 
 
@@ -94,9 +95,9 @@ const Wines = () => {
             <div>
                 <table>
                     <tbody>
-                        <td id="before">&lt;</td>
-                        {pageBar}
-                        <td id="after">&gt;</td>
+                        <td id="before"><button>&lt;</button></td>
+                        {/* {pageBar} */}
+                        <td id="after"><a>&gt;</a></td>
                     </tbody>
                 </table>
             </div>

@@ -8,7 +8,7 @@
         {
             "id": 2,
             "name": "wines",
-            "link": "/wines"
+            "link": "/wines/reds"
         }
     ]
 }

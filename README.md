@@ -12,3 +12,13 @@
 
 삭제 버튼 누르면 게시글 삭제하고 홈으로 이동
 
+
+
+<Routes>
+    <Route path='/path' element={<element>}>
+</Routes>
+
+path -> /path1/path2.... -> 고정된 주소
+        /path1/:path2.... -> path1 다음으로 올 파라미터는 변경 가능.
+
+element -> <element> 

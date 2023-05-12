@@ -115,7 +115,7 @@ const App = () => {
           <Route path="/posting" element={<Posting posts={posts} onInsert={onInsert} />} />
           <Route path="/posting/:postId" element={<Posting posts={posts} onInsert={onInsert} />} />
           <Route path="/post/:postId" element={<PostedView posts={posts} onRemove={onRemove} />} />
-          <Route path="/wines" element={<Wines/>} />
+          <Route path="/wines/:wine" element={<Wines/>} />
         </Routes>  
       </div>  
       
